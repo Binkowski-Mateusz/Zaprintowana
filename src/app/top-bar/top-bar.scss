@@ -1,0 +1,38 @@
+/* Top Bar - 20% height */
+.top-bar {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.top-content {
+  text-align: center;
+}
+
+.top-content h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.top-content p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .top-content h1 {
+    font-size: 2rem;
+  }
+  
+  .top-content p {
+    font-size: 1rem;
+  }
+}
