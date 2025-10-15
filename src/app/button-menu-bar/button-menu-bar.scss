@@ -1,12 +1,13 @@
 /* Button Bar - 8% height */
 .button-bar {
-  height: 8vh;
+  height: 6vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f8f9fa;
+  background: #e9cbd6;
   border-bottom: 1px solid #e9ecef;
   box-sizing: border-box;
+  font: Arial, sans-serif;
 }
 
 .button-container {
@@ -16,8 +17,8 @@
 }
 
 .main-button {
-  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-  color: #333;
+  background: none;
+  color: white;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
@@ -25,7 +26,6 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   min-width: 180px;
 }
 

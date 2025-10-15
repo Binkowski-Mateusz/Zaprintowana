@@ -8,4 +8,16 @@ import { Component, signal } from '@angular/core';
 })
 export class TopBar {
   protected readonly title = signal('Zaprintowana');
+
+  protected openFacebook(): void {
+    window.open('https://www.facebook.com', '_blank');
+  }
+
+  protected openInstagram(): void {
+    window.open('https://www.instagram.com', '_blank');
+  }
+
+  protected openTikTok(): void {
+    window.open('https://www.tiktok.com', '_blank');
+  }
 }
