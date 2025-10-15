@@ -1,16 +1,49 @@
 <div class="bottom-content">
-  <div class="content">
-    <div class="left-side">
-      <div class="logo-container">
-        <h2>ZAPRINTOWANA</h2>
-        <p class="tagline">serio fajne kartki</p>
+  <div class="image-carousel">
+    <!-- Left Arrow -->
+    <button class="carousel-arrow left-arrow" (click)="previousImage()" [disabled]="isLoading()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    
+    <!-- Main Image Display -->
+    <div class="image-container">
+      <img 
+        [src]="currentImagePath()" 
+        [alt]="'Wedding Stationery ' + (currentImageIndex() + 1)"
+        class="main-image"
+        (load)="onImageLoad()"
+        (error)="onImageError()"
+      />
+      <div class="image-overlay" *ngIf="!isLoading()">
+        <div class="logo-overlay">
+          <h2>ZAPRINTOWANA</h2>
+          <p class="tagline">serio fajne kartki</p>
+        </div>
+      </div>
+      <div class="loading-spinner" *ngIf="isLoading()">
+        <div class="spinner"></div>
       </div>
     </div>
-    <div class="right-side">
-      <div class="featured-content">
-        <h3>Featured Wedding Stationery</h3>
-        <p>Discover our beautiful collection of wedding invitations and accessories</p>
-      </div>
-    </div>
+    
+    <!-- Right Arrow -->
+    <button class="carousel-arrow right-arrow" (click)="nextImage()" [disabled]="isLoading()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Image Indicators -->
+  <div class="image-indicators">
+    <button 
+      *ngFor="let image of images(); let i = index"
+      class="indicator"
+      [class.active]="i === currentImageIndex()"
+      (click)="goToImage(i)"
+      [disabled]="isLoading()"
+    ></button>
   </div>
 </div>
+
