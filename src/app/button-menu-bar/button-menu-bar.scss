@@ -8,6 +8,14 @@
   border-bottom: 1px solid #e9ecef;
   box-sizing: border-box;
   font: Arial, sans-serif;
+  position: relative;
+}
+
+.hover-zone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .button-container {
@@ -62,5 +70,31 @@
     min-width: 160px;
     padding: 0.6rem 1rem;
     font-size: 0.75rem;
+  }
+}
+
+/* Select Menu Container */
+.select-menu-container {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: #e9cbd6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  min-width: 200px;
+  animation: fadeInDown 0.3s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }

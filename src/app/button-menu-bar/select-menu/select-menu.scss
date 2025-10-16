@@ -1,0 +1,31 @@
+.select-menu {
+  h3 {
+    margin: 0 0 0.75rem 0;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #555;
+  font-size: 0.9rem;
+  
+  &:hover {
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  &:not(:last-child) {
+    border-bottom: 1px solid #f0f0f0;
+  }
+}

@@ -1,7 +1,32 @@
 <div class="button-bar">
-  <div class="button-container">
-    <button class="main-button">ZAPROSZENIA ŚLUBNE</button>
-    <button class="main-button">DODATKI ŚLUBNE</button>
-    <button class="main-button">PODZIĘKOWANIA ŚLUBNE</button>
+  <div class="hover-zone" (mouseleave)="onContainerLeave()">
+    <div class="button-container">
+      <button 
+        class="main-button" 
+        (mouseenter)="onButtonHover('zaproszenia')"
+        (click)="onButtonHover('zaproszenia')">
+        ZAPROSZENIA ŚLUBNE
+      </button>
+      <button 
+        class="main-button" 
+        (mouseenter)="onButtonHover('dodatki')"
+        (click)="onButtonHover('dodatki')">
+        DODATKI ŚLUBNE
+      </button>
+      <button 
+        class="main-button" 
+        (mouseenter)="onButtonHover('podziekowania')"
+        (click)="onButtonHover('podziekowania')">
+        PODZIĘKOWANIA ŚLUBNE
+      </button>
+    </div>
+    
+    <!-- Select Menu - appears on hover -->
+    <div class="select-menu-container" 
+         *ngIf="hoveredButton"
+         (mouseenter)="onMenuEnter()"
+         (mouseleave)="onContainerLeave()">
+      <app-select-menu></app-select-menu>
+    </div>
   </div>
 </div>

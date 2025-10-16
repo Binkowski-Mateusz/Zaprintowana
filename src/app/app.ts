@@ -6,6 +6,7 @@ import { MainMenu } from './main-menu/main-menu';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, TopBar, ButtonMenuBar, MainMenu],
   templateUrl: './app.html',
   styleUrl: './app.scss'
